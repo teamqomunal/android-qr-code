@@ -1,9 +1,9 @@
 package com.qomunal.opensource.androidresearch.ui.detail
 
-import android.os.Bundle
 import androidx.activity.viewModels
-import com.qomunal.opensource.androidresearch.common.base.BaseActivity
-import com.qomunal.opensource.androidresearch.databinding.ActivityDetailBinding
+import com.google.zxing.Result
+import com.qomunal.opensource.androidresearch.common.base.QrScannerActivity
+import com.qomunal.opensource.androidresearch.common.ext.showToast
 
 /**
  * Created by faisalamircs on 13/01/2024
@@ -15,32 +15,21 @@ import com.qomunal.opensource.androidresearch.databinding.ActivityDetailBinding
  */
 
 
-class DetailActivity : BaseActivity<ActivityDetailBinding>() {
+class DetailActivity : QrScannerActivity() {
+
+    companion object {
+        const val EXTRA_EVENT = "EXTRA_EVENT"
+    }
+
 
     private val viewModel: DetailViewModel by viewModels()
-    private val reouter: DetailRouter by lazy {
-        DetailRouter(this)
-    }
 
-    override fun setupViewBinding(): ActivityDetailBinding {
-        return ActivityDetailBinding.inflate(layoutInflater)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun initUI() {
-        binding.apply {
-
-        }
+    override fun doOnSuccessScan(result: Result) {
+        showToast(result.text)
     }
 
     override fun initObserver() {
-        viewModel.apply {
 
-        }
     }
-
 
 }

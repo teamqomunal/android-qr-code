@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = ProjectSetting.PACKAGE_NAME
-        minSdk = 21
+        minSdk = 23
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -70,6 +70,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.service)
     implementation(libs.androidx.lifecycle.process)
     implementation(libs.androidx.lifecycle.reactivestreams.ktx)
+
+    implementation(libs.code.scanner)
+    implementation(libs.zxing.android.embedded)
 
     testImplementation(libs.androidx.core.testing)
     testImplementation (libs.androidx.lifecycle.runtime.testing)

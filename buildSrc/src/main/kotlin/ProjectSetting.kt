@@ -24,7 +24,7 @@ object ProjectSetting {
     // ---------------------------------------------------------------------------------------------
 
     const val MIN_SDK = 21
-    const val COMPILE_SDK = 34
+    const val COMPILE_SDK = 35
 
     const val TARGET_SDK = COMPILE_SDK
     const val VERSION_NAME = "$VERSION_MAJOR.$VERSION_MINOR.$VERSION_PATCH"
